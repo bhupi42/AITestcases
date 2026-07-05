@@ -1,6 +1,6 @@
-# Requirement to Test Case Generator (Ollama)
+# Free AI Test Case Generator Using Ollama
 
-A lightweight web tool that converts software requirements into structured test cases using a free local Ollama model.
+A lightweight web tool that turns requirements into structured test cases using free local AI with Ollama.
 
 ## Features
 
