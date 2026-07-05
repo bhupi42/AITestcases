@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Requirement to Test Cases</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="hero">
+        <p class="eyebrow">Local AI QA Assistant</p>
+        <h1>Generate Test Cases From Requirements</h1>
+        <p>
+          Paste a requirement, use your local Ollama model, and produce actionable QA test cases in seconds.
+        </p>
+      </section>
+
+      <section class="panel">
+        <form id="generator-form">
+          <label for="requirement">Requirement</label>
+          <textarea
+            id="requirement"
+            name="requirement"
+            placeholder="Example: User should be able to reset password using OTP sent to email..."
+            required
+          ></textarea>
+
+          <div class="row">
+            <div>
+              <label for="model">Model (optional)</label>
+              <input id="model" name="model" placeholder="llama3:latest" />
+            </div>
+            <button type="submit" id="generate-btn">Generate Test Cases</button>
+          </div>
+        </form>
+
+        <div id="status" class="status" aria-live="polite"></div>
+      </section>
+
+      <section id="results" class="panel hidden">
+        <div class="results-head">
+          <h2>Generated Cases</h2>
+          <div class="actions">
+            <button id="copy-btn" type="button">Copy JSON</button>
+            <button id="download-btn" type="button">Download JSON</button>
+          </div>
+        </div>
+
+        <div id="meta" class="meta"></div>
+        <p id="excel-link-wrap" class="meta hidden">
+          Excel file: <a id="excel-link" href="#" download>Download generated Excel</a>
+        </p>
+        <div id="cards" class="cards"></div>
+
+        <details>
+          <summary>Raw JSON Output</summary>
+          <pre id="raw-output"></pre>
+        </details>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
